@@ -1,0 +1,52 @@
+{
+  "no_memory": {
+    "b1_immediate": 0.6,
+    "b1_slope": 0.0,
+    "b2_immediate": 0.4,
+    "b2_slope": 0.0,
+    "S1_t1": 0.43009464064006225,
+    "S2_t2": 0.37317257987413704,
+    "joint_survival_t1_t2": 0.2303692170527678,
+    "pqd_holds": true,
+    "p_simultaneous_default": 0.26415866168874375
+  },
+  "no_immediate_impact": {
+    "b1_immediate": 0.0,
+    "b1_slope": 0.5,
+    "b2_immediate": 0.0,
+    "b2_slope": 0.3,
+    "p_simultaneous_default": 0.0,
+    "p_simultaneous_default_is_zero": true
+  },
+  "general": {
+    "b1_immediate": 0.6,
+    "b1_slope": 0.5,
+    "b2_immediate": 0.4,
+    "b2_slope": 0.3,
+    "S1_t1": 0.33394969762279164,
+    "S2_t2": 0.2353831061687336,
+    "joint_survival_t1_t2": 0.15650347466771247,
+    "pqd_holds": true,
+    "p_simultaneous_default": 0.2369326654128887
+  },
+  "general_same_immediate_different_slope": {
+    "b1_immediate": 0.6,
+    "b1_slope": 1.0,
+    "b2_immediate": 0.4,
+    "b2_slope": 0.6
+  },
+  "slope_invariance_check": {
+    "horizon": 0.1,
+    "p_simultaneous_default_general": 0.023214138874266026,
+    "p_simultaneous_default_double_slope": 0.023203402354003092,
+    "relative_error": 0.00046249918298008215
+  },
+  "t1": 1.5,
+  "t2": 2.3,
+  "t_horizon": 2.3,
+  "p_joint_survival_mc": 0.15586,
+  "mc_error_joint_survival": 0.0006434746677124736,
+  "p_simultaneous_default_mc": 0.24252666666666667,
+  "mc_error_simultaneous_default": 0.005594001253777958,
+  "n_mc_paths": 150000
+}

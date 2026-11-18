@@ -1,0 +1,24 @@
+{
+  "phi1": 1.0,
+  "phi2": 1.0,
+  "gamma_rates": {
+    "0": 0.5666666666666669,
+    "1": 0.4149494949494952,
+    "01": 0.1777777777777776
+  },
+  "t1": 1.2,
+  "t2": 2.1,
+  "survival_theta_eq_1_explicit_product_form": 0.10297552367497272,
+  "survival_theta_eq_1_via_model": 0.10297552367497272,
+  "survival_random_frailty": 0.16529728497683663,
+  "lemma_34_fails_for_random_frailty": true,
+  "ft_conditional_survival_example": 0.05206599975235985,
+  "jump_date": 1.0,
+  "jump_size": 0.8,
+  "default_atom_probability_analytical": 0.19041175308595465,
+  "mc_survival_random_frailty": 0.16565,
+  "mc_error_survival": 0.00035271502316336356,
+  "mc_default_atom_probability": 0.190665,
+  "mc_error_atom": 0.00025324691404535193,
+  "n_mc_paths": 200000
+}

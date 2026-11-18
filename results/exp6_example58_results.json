@@ -1,0 +1,18 @@
+{
+  "jump_date_t0": 1.0,
+  "S1_t0": 0.6839397205857212,
+  "S2_t0": 0.6839397205857212,
+  "S12_t0": 0.3678794411714424,
+  "gamma_12_before_t0": 0.0,
+  "gamma_12_at_t0": -0.24022901391655482,
+  "gamma_12_closed_form": -0.24022901391655507,
+  "gamma_12_is_negative": true,
+  "positive_quadrant_dependence_violated": true,
+  "p_simultaneous_default_analytical": 0.0,
+  "p_simultaneous_default_mc": 0.0,
+  "mc_error_simultaneous_default": 0.0,
+  "p_joint_survival_t0_mc": 0.36834333333333336,
+  "mc_error_joint_survival": 0.0004638921618909664,
+  "n_mc_paths": 300000,
+  "all_R_J_deterministic": true
+}

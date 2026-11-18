@@ -1,0 +1,30 @@
+{
+  "case_a_levy_deterministic": {
+    "l_t_cond": [
+      0.0,
+      0.0
+    ],
+    "psi_recursion_cond": 0.23131245060170896,
+    "psi_closed_form_cond": 0.23131245060170902,
+    "recursion_matches_closed_form_cond": true,
+    "psi_recursion_uncond": 0.12144943264290155,
+    "psi_conditional_formula_at_t0": 0.1214494326429016,
+    "psi_unconditional_marshall_olkin": 0.1214494326429016,
+    "recursion_matches_closed_form_uncond": true,
+    "a1_is_full_name_set": true,
+    "a_last_is_empty_set": true
+  },
+  "case_b_liu_frailty": {
+    "survival_closed_form": 0.26763558942248544,
+    "survival_recursion": 0.26763558942248544,
+    "recursion_vs_closed_form_error": 0.0,
+    "n_quadrature_nodes_requested": 4000,
+    "n_quadrature_nodes_used": 360,
+    "p_survival_mc": 0.2691,
+    "mc_error": 0.0014644105775145633,
+    "psi_phi_full": 1.2391304347826086,
+    "lemma_34_holds_case_b": false
+  },
+  "n_quadrature_nodes": 4000,
+  "n_mc_paths": 150000
+}

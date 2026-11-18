@@ -1,0 +1,27 @@
+{
+  "n_names": 3,
+  "maturities": [
+    1.5,
+    2.0,
+    1.8
+  ],
+  "factor_X_j": [
+    0.9704863350170394,
+    0.9418908715533684,
+    0.9560632084962148
+  ],
+  "factor_X_total": 0.8739299406379836,
+  "factor_shock": 0.19460177266427695,
+  "survival_factorized": 0.17006831563253794,
+  "feller_satisfied": [
+    true,
+    true,
+    true
+  ],
+  "n_mc_paths": 100000,
+  "n_cir_steps_per_unit": 500,
+  "p_survival_mc": 0.16945,
+  "mc_error": 0.0006183156325379469,
+  "direct_mc_estimate": 0.16981621750163836,
+  "direct_mc_error": 0.0002520981308995751
+}
