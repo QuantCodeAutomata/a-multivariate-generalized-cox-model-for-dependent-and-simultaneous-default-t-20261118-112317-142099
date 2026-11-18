@@ -106,21 +106,30 @@ class NonhomogeneousPoissonShotNoise:
         """Simulate (K^1, K^2) on t_grid for the constant-intensity special case.
 
         Returns arrays of shape (n_paths, len(t_grid)).
+
+        Since G^j(t,x) = x * (immediate_j + slope_j * t) is affine in the age
+        t = (grid time - jump time), the driver at a grid point decomposes as
+        K_t^j = immediate_j * S0(t) + slope_j * (t * S0(t) - S1(t)), with
+        S0(t) = sum of marks of jumps with theta_i <= t and S1(t) the same sum
+        weighted by theta_i. This removes the explicit loop over the grid
+        (kept only per path, over the Poisson-distributed jump count).
         """
+        t_grid = np.asarray(t_grid, dtype=float)
         t_max = t_grid[-1]
-        k1 = np.zeros((n_paths, len(t_grid)))
-        k2 = np.zeros((n_paths, len(t_grid)))
+        n_grid_pts = len(t_grid)
+        k1 = np.zeros((n_paths, n_grid_pts))
+        k2 = np.zeros((n_paths, n_grid_pts))
         for p in range(n_paths):
             n_jumps = rng.poisson(self.lambda_n_rate * t_max)
             if n_jumps == 0:
                 continue
             thetas = np.sort(rng.uniform(0.0, t_max, size=n_jumps))
             marks = rng.exponential(1.0 / self.mark_rate, size=n_jumps)
-            for ti, grid_t in enumerate(t_grid):
-                active = thetas <= grid_t
-                if not np.any(active):
-                    continue
-                ages = grid_t - thetas[active]
-                k1[p, ti] = np.sum(marks[active] * self.kernel1(ages))
-                k2[p, ti] = np.sum(marks[active] * self.kernel2(ages))
+            idx = np.searchsorted(thetas, t_grid, side="right")
+            cum_marks = np.concatenate(([0.0], np.cumsum(marks)))
+            cum_marks_theta = np.concatenate(([0.0], np.cumsum(marks * thetas)))
+            s0 = cum_marks[idx]
+            s1 = cum_marks_theta[idx]
+            k1[p] = self.kernel1.immediate * s0 + self.kernel1.slope * (t_grid * s0 - s1)
+            k2[p] = self.kernel2.immediate * s0 + self.kernel2.slope * (t_grid * s0 - s1)
         return k1, k2
