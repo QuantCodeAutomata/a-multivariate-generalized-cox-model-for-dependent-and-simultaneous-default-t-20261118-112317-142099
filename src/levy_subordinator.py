@@ -6,9 +6,9 @@ measure nu on R_+^2 \\ {(0,0)} such that int(1 ^ (x1+x2)) nu(dx1,dx2) < inf
 (automatically satisfied here since nu has finite total mass), and the
 "Compound Poisson drivers" paragraph where every jump is common.
 
-The specific Levy measure is not prescribed by the paper (see exp_1's
-uncertainties). We implement a mixture compound Poisson subordinator whose
-jumps are, independently at each Poisson arrival, one of:
+The specific Levy measure is not prescribed by the paper. We implement a
+mixture compound Poisson subordinator whose jumps are, independently at each
+Poisson arrival, one of:
   - idiosyncratic to name 1 only (mass on the x1-axis of nu),
   - idiosyncratic to name 2 only (mass on the x2-axis of nu),
   - common to both names, with independent Exponential marks for each
